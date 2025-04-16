@@ -1,0 +1,7 @@
+{
+  "name": "Civil Defense",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
