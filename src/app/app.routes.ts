@@ -1,14 +1,9 @@
 import { Routes } from '@angular/router';
+import { AlberguesPage } from './albergues/albergues.page';
+import { MapaPage } from './mapa/mapa.page';
 
 export const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'folder/inbox',
-    pathMatch: 'full',
-  },
-  {
-    path: 'folder/:id',
-    loadComponent: () =>
-      import('./folder/folder.page').then((m) => m.FolderPage),
-  },
+  { path: '', redirectTo: 'albergues', pathMatch: 'full' },
+  { path: 'albergues', component: AlberguesPage },
+  { path: 'mapa', component: MapaPage }
 ];
