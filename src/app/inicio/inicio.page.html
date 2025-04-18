@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Defensa Civil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <swiper-container [options]="swiperOptions">
+    <swiper-slide *ngFor="let image of sliderImages">
+      <div class="slide-container">
+        <img [src]="image.src" [alt]="image.alt" class="slide-image">
+        <div class="slide-overlay">
+          <h2>Defensa Civil</h2>
+          <p>Siempre listos para servir</p>
+        </div>
+      </div>
+    </swiper-slide>
+  </swiper-container>
+
+  <div class="content-container">
+    <h2>Bienvenidos a Defensa Civil</h2>
+    <p>
+      La Defensa Civil es el conjunto de personas representativas de una comunidad, que desarrollan y ejecutan actividades 
+      de Defensa Civil en un determinado lugar, orientando las acciones a proteger la integridad física de la población 
+      y su patrimonio frente a los efectos de los fenómenos naturales o antrópicos.
+    </p>
+    <ion-button class= "boton2" expand="block" routerLink="/historia" color="primary">
+      Conoce nuestra historia 
+    </ion-button>
+    <ion-button expand="block" routerLink="/videos" color="primary">
+      Mira nuestros videos  
+    </ion-button>
+  </div>
+</ion-content>

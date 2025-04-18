@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Videos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="videos-container">
+    <h1>Videos Informativos</h1>
+    
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" size-md="6" size-lg="4" *ngFor="let videoId of videoIds; let i = index">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Video Informativo {{i + 1}}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <div class="video-container">
+                <iframe 
+                  width="100%" 
+                  height="100%" 
+                  [src]="getSafeUrl(videoId)" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+                </iframe>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
