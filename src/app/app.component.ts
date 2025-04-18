@@ -17,7 +17,7 @@ export class AppComponent {
     { title: 'Outbox', url: '/folder/outbox', icon: 'paper-plane' },
     { title: 'Favorites', url: '/folder/favorites', icon: 'heart' },
     { title: 'Archived', url: '/folder/archived', icon: 'archive' },
-    { title: 'map', url: '/map', icon: 'trash' },
+    { title: 'mapa', url: '/mapa', icon: 'trash' },
     { title: 'albergues', url: '/albergues', icon: 'warning' },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
