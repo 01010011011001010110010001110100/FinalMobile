@@ -40,7 +40,6 @@ export class AlberguesPage {
   }
 
   get alberguesFiltrados() {
-    console.log('Filtro actual: ', this.filtro); // Ver qué filtro se está aplicando
     return this.albergues.filter(a =>
       (a.ciudad && a.ciudad.toLowerCase().includes(this.filtro.toLowerCase())) ||
       (a.edificio && a.edificio.toLowerCase().includes(this.filtro.toLowerCase()))

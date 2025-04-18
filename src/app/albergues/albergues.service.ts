@@ -1,28 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map, of } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 export const MOCK_ALBERGUES = [
-    {
-        ciudad: "Santo Domingo de Guzmán",
-        codigo: "DO-010007",
-        edificio: "Politécnico Don Bosco",
-        coordinador: "Modesto Cabrera",
-        telefono: "(829) 699-3290",
-        capacidad: "150",
-        lat: -69.901247,
-        lng: 18.478692
-      },
-      {
-        ciudad: "Santiago de los Caballeros",
-        codigo: "DO-010008",
-        edificio: "Instituto Politécnico de Santiago",
-        coordinador: "Ana Rodríguez",
-        telefono: "(809) 555-5555",
-        capacidad: "200",
-        lat: -70.564325,
-        lng: 19.451676
-      }, 
+    { id: 1, nombre: 'Albergue 1', lat: 19.432608, lng: -99.133209 },
+    { id: 2, nombre: 'Albergue 2', lat: 19.433608, lng: -99.132209 },
+    { id: 3, nombre: 'Albergue 3', lat: 19.431608, lng: -99.134209 }
   ];
 
 export interface Albergue {
@@ -45,15 +28,11 @@ export class AlberguesService {
   private apiUrl = 'https://adamix.net/defensa_civil/def/albergues.php';
   
 
-//   constructor(private http: HttpClient) {}
-    constructor(){}
-//   getAlbergues(): Observable<Albergue[]> {
-//     return this.http.get<{ exito: boolean, datos: Albergue[] }>(this.apiUrl).pipe(
-//       map(response => response.datos)
-//     );
-//   }
-  getAlbergues(): Observable<any[]> {
-    // En lugar de hacer la llamada HTTP, devuelve los datos mock
-    return of(MOCK_ALBERGUES);  // 'of' crea un observable con los datos proporcionados
+  constructor(private http: HttpClient) {}
+
+  getAlbergues(): Observable<Albergue[]> {
+    return this.http.get<{ exito: boolean, datos: Albergue[] }>(this.apiUrl).pipe(
+      map(response => response.datos)
+    );
   }
 }
