@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonNote, IonMenuToggle, IonItem, IonIcon, IonLabel, IonRouterOutlet, IonRouterLink } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp } from 'ionicons/icons';
+import { home, book, videocam, map, bonfire } from 'ionicons/icons';
 
 @Component({
   selector: 'app-root',
@@ -13,15 +13,13 @@ import { mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutlin
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Inbox', url: '/inicio', icon: 'mail' },
-    { title: 'Outbox', url: '/historia', icon: 'paper-plane' },
-    { title: 'Favorites', url: '/videos', icon: 'heart' },
-    { title: 'Archived', url: '/folder/archived', icon: 'archive' },
-    { title: 'mapa', url: '/mapa', icon: 'trash' },
-    { title: 'albergues', url: '/albergues', icon: 'warning' },
+    { title: 'Inicio', url: '/inicio', icon: 'home' },
+    { title: 'Historia', url: '/historia', icon: 'book' },
+    { title: 'Videos', url: '/videos', icon: 'videocam' },
+    { title: 'Mapa Albergues', url: '/mapa', icon: 'map' },
+    { title: 'Albergues', url: '/albergues', icon: 'bonfire' },
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   constructor() {
-    addIcons({ mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp });
+    addIcons({ home, book, videocam, map, bonfire });
   }
 }
