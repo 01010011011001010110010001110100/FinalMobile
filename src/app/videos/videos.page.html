@@ -1,31 +1,42 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
+      <ion-back-button defaultHref="/inicio"></ion-back-button>
     </ion-buttons>
     <ion-title>Videos</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
   <div class="videos-container">
     <h1>Videos Informativos</h1>
     
-    <ion-grid>
+    <div *ngIf="loading" class="loading-container">
+      <ion-spinner></ion-spinner>
+      <p>Cargando videos...</p>
+    </div>
+    
+    <ion-card *ngIf="error">
+      <ion-card-content>
+        <ion-text color="danger">{{ error }}</ion-text>
+      </ion-card-content>
+    </ion-card>
+   
+    <ion-grid *ngIf="!loading && !error">
       <ion-row>
-        <ion-col size="12" size-md="6" size-lg="4" *ngFor="let videoId of videoIds; let i = index">
+        <ion-col size="12" size-md="6" size-lg="4" *ngFor="let video of videos; let i = index">
           <ion-card>
             <ion-card-header>
-              <ion-card-title>Video Informativo {{i + 1}}</ion-card-title>
+              <ion-card-title>{{ video.titulo }}</ion-card-title>
+              <ion-card-subtitle>{{ video.fecha }}</ion-card-subtitle>
             </ion-card-header>
             <ion-card-content>
               <div class="video-container">
-                <iframe 
-                  width="100%" 
-                  height="100%" 
-                  [src]="getSafeUrl(videoId)" 
-                  frameborder="0" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                <iframe
+                  width="100%"
+                  height="100%"
+                  [src]="getSafeUrl(video.link)"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen>
                 </iframe>
               </div>
