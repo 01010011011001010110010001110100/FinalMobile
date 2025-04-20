@@ -5,7 +5,8 @@ import { MapaPage } from './mapa/mapa.page';
 export const routes: Routes = [
   { path: '', redirectTo: 'albergues', pathMatch: 'full' },
   { path: 'albergues', component: AlberguesPage },
-  { path: 'mapa', component: MapaPage },  {
+  { path: 'mapa', component: MapaPage },
+  {
     path: 'inicio',
     loadComponent: () => import('./inicio/inicio.page').then( m => m.InicioPage)
   },
@@ -16,6 +17,10 @@ export const routes: Routes = [
   {
     path: 'videos',
     loadComponent: () => import('./videos/videos.page').then( m => m.VideosPage)
+  },
+  {
+    path: 'servicios',
+    loadComponent: () => import('./servicios/servicios.page').then( m => m.ServiciosPage)
   }
 
 ];
