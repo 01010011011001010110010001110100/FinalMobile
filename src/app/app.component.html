@@ -3,9 +3,22 @@
     <ion-menu contentId="main-content" type="overlay">
       <ion-content>
         <ion-list id="inbox-list">
-          <ion-list-header style="margin-bottom: 25px;">Menu</ion-list-header>
+          <ion-list-header style="margin-bottom: 25px;">Home</ion-list-header>
 
           @for (p of appPages; track p; let i = $index) {
+            <ion-menu-toggle auto-hide="false">
+              <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+                <ion-icon aria-hidden="true" slot="start" [md]="p.icon"></ion-icon>
+                <ion-label>{{ p.title }}</ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+          }
+        </ion-list>
+
+        <ion-list id="inbox-list">
+          <ion-list-header style="margin-bottom: 25px;">Post LogIn</ion-list-header>
+
+          @for (p of postLogged; track p; let i = $index) {
             <ion-menu-toggle auto-hide="false">
               <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
                 <ion-icon aria-hidden="true" slot="start" [md]="p.icon"></ion-icon>

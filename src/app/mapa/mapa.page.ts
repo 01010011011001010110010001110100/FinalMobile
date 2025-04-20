@@ -7,8 +7,10 @@ import {
   IonHeader, 
   IonToolbar, 
   IonTitle, 
-  IonContent 
+  IonContent,
+  IonLoading
 } from '@ionic/angular/standalone';
+import { LeafletHelper } from '../helpers/leaflet.helper';
 
 // Solución para el problema del ícono por defecto (ignorando TypeScript)
 (L.Icon.Default.prototype as any)._getIconUrl = function () {};
@@ -28,34 +30,49 @@ L.Icon.Default.mergeOptions({
     IonToolbar,
     IonTitle,
     IonContent,
+    IonLoading
   ],
   selector: 'app-mapa',
   templateUrl: './mapa.page.html',
   styleUrls: ['./mapa.page.scss'],
   standalone: true,
 })
-export class MapaPage implements AfterViewInit {
-  private map: any;
+export class MapaPage {
+  loading = false;
+  public defLat: number = 18.47893;
+  public defLon: number = -69.89178;
 
   constructor(private alberguesService: AlberguesService) {}
 
-  ngAfterViewInit(): void {
-    this.initMap();
+  ionViewDidEnter() {
+    this.loading = true;
+    setTimeout(() => {
+      this.initMap();
+      this.loading = false;
+    }, 1000);
+  }
+
+  ionViewWillLeave() {
+    LeafletHelper.destroyMap();
   }
 
   private initMap(): void {
-    this.map = L.map('map').setView([18.47893, -69.89178], 8);
+    const map = LeafletHelper.initMap('map', [this.defLat, this.defLon], 13);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap contributors'
-    }).addTo(this.map);
+    }).addTo(map);
 
     this.alberguesService.getAlbergues().subscribe(albergues => {
       albergues.forEach(a => {
         L.marker([parseFloat(a.lng), parseFloat(a.lat)])
-          .addTo(this.map)
+          .addTo(map)
           .bindPopup(`<strong>${a.edificio}</strong><br>${a.ciudad}<br>Capacidad: ${a.capacidad}`);
       });
     });
+
+    setTimeout(() => {
+      map.invalidateSize();
+    }, 500);
   }
 }

@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Reportar Situación</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="stacked">Título</ion-label>
+    <ion-input name="titulo" [(ngModel)]="titulo"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Descripción</ion-label>
+    <ion-textarea name="descripcion" [(ngModel)]="descripcion"></ion-textarea>
+  </ion-item>
+
+  <ion-item button (click)="capturarFoto()">
+    <ion-icon aria-hidden="true" slot="start" md="camera"></ion-icon>
+    <ion-label>{{ fotoBase64 ? 'Cambiar foto' : 'Tomar foto' }}</ion-label>
+  </ion-item>
+  <div *ngIf="fotoBase64" class="ion-text-center">
+    <img [src]="'data:image/jpeg;base64,' + fotoBase64" style="max-width: 100%; border-radius: 8px;" />
+  </div>
+
+  <ion-item button (click)="obtenerUbicacion()">
+    <ion-icon aria-hidden="true" slot="start" md="location"></ion-icon>
+    <ion-label>Obtener ubicación actual</ion-label>
+  </ion-item>
+  <div *ngIf="latitud && longitud" class="ion-margin">
+    Lat: {{ latitud }}, Lon: {{ longitud }}
+  </div>
+
+  <ion-button
+    expand="block"
+    [disabled]="loading"
+    (click)="enviar()"
+    class="ion-margin-top"
+  >
+    <ion-icon slot="start" name="send-outline"></ion-icon>
+    Enviar Reporte
+  </ion-button>
+</ion-content>

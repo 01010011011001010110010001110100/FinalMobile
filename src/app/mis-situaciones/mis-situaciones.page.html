@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>📋 Mis Situaciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card *ngFor="let situacion of situaciones" class="ion-margin-bottom">
+    <img
+    [src]="getFotoDataUrl(situacion.foto)"
+    alt="Foto de la situación"
+    style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;" />
+  
+
+    <ion-card-header>
+      <ion-card-title>
+        <ion-icon name="alert-circle-outline" color="warning"></ion-icon>
+        {{ situacion.titulo }}
+      </ion-card-title>
+      <p style="font-size: 0.9em; color: gray;">
+        🕒 {{ situacion.fecha | date: 'dd/MM/yyyy hh:mm a' }}
+      </p>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p><strong>📝 Descripción:</strong> {{ situacion.descripcion }}</p>
+      <p>
+        <strong>📍 Ubicación:</strong> {{ situacion.latitud }}, {{ situacion.longitud }}
+      </p>
+      <p>
+        <strong>📌 Estado:</strong>
+        <ion-chip [color]="situacion.estado === 'resuelto' ? 'success' : (situacion.estado === 'en proceso' ? 'warning' : 'medium')">
+          <ion-label text-capitalize>{{ situacion.estado }}</ion-label>
+        </ion-chip>
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

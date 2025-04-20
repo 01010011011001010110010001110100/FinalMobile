@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Noticias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-spinner
+    *ngIf="loading"
+    name="crescent"
+    class="spinner-center">
+  </ion-spinner>
+
+  <div *ngIf="error && !loading" class="ion-text-center">
+    <p>No se pudieron cargar las noticias.</p>
+    <ion-button (click)="ngOnInit()">Reintentar</ion-button>
+  </div>
+
+  <ion-list *ngIf="!loading && !error">
+    <ion-item button *ngFor="let noti of noticias">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="noti.foto"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ noti.titulo }}</h2>
+        <p>{{ noti.fecha | date:'dd/MM/yyyy' }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
