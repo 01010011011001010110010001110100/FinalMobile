@@ -9,6 +9,7 @@ import { NuevaSituacionPage } from './nueva-situacion/nueva-situacion.page';
 import { MisSituacionesPage } from './mis-situaciones/mis-situaciones.page';
 import { MapaSituacionesPage } from './mapa-situaciones/mapa-situaciones/mapa-situaciones.page';
 import { AcercaPage } from './acerca/acerca.page';
+import { ServiciosPage } from './servicios/servicios.page';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },
@@ -21,5 +22,6 @@ export const routes: Routes = [
   { path: 'nueva-situacion', component: NuevaSituacionPage },
   { path: 'mis-situaciones', component: MisSituacionesPage },
   { path: 'mapa-situaciones', component: MapaSituacionesPage },
-  { path: 'acerca', component: AcercaPage }
+  { path: 'acerca', component: AcercaPage },
+  { path: 'servicios', component: ServiciosPage }
 ];

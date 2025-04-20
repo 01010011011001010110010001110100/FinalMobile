@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonNote, IonMenuToggle, IonItem, IonIcon, IonLabel, IonRouterOutlet, IonRouterLink } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { home, book, videocam, map, bonfire, newspaper, alertCircle, fingerPrint, locate, informationCircle } from 'ionicons/icons';
+import { home, book, videocam, map, bonfire, newspaper, alertCircle, fingerPrint, locate, informationCircle, reader } from 'ionicons/icons';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +15,7 @@ export class AppComponent {
   public appPages = [
     { title: 'Inicio', url: '/inicio', icon: 'home' },
     { title: 'Historia', url: '/historia', icon: 'book' },
+    { title: 'Servicios', url: '/servicios', icon: 'reader' },
     { title: 'Videos', url: '/videos', icon: 'videocam' },
     { title: 'Mapa Albergues', url: '/mapa', icon: 'map' },
     { title: 'Albergues', url: '/albergues', icon: 'bonfire' },
@@ -29,6 +30,6 @@ export class AppComponent {
   ];
 
   constructor() {
-    addIcons({ home, book, videocam, map, bonfire, newspaper, alertCircle, fingerPrint, locate, informationCircle });
+    addIcons({ home, book, videocam, map, bonfire, newspaper, alertCircle, fingerPrint, locate, informationCircle, reader });
   }
 }
