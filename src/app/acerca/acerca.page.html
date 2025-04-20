@@ -1,0 +1,139 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+    </ion-buttons>
+    <ion-title>Acerca de Nosotros</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="about-container">
+    <!-- Encabezado -->
+    <div class="header-section">
+      <h1>Nuestro Equipo</h1>
+      <p class="header-description">
+        Somos un grupo de profesionales apasionados por la tecnología y el desarrollo de soluciones
+        que mejoran la vida de las personas. Nuestra diversidad de habilidades y experiencias
+        nos permite abordar problemas complejos con perspectivas únicas.
+      </p>
+    </div>
+
+    <!-- Misión y Visión -->
+    <div class="mission-vision-section">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12" size-md="6">
+            <ion-card class="info-card">
+              <ion-card-header>
+                <ion-icon name="flag" class="section-icon"></ion-icon>
+                <ion-card-title>Nuestra Misión</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                Desarrollar soluciones tecnológicas innovadoras que contribuyan a la seguridad y bienestar
+                de la comunidad, estableciendo nuevos estándares de calidad y accesibilidad en aplicaciones
+                de servicio público.
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col size="12" size-md="6">
+            <ion-card class="info-card">
+              <ion-card-header>
+                <ion-icon name="eye" class="section-icon"></ion-icon>
+                <ion-card-title>Nuestra Visión</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                Ser reconocidos como un equipo líder en el desarrollo de aplicaciones que transforman
+                la manera en que las personas interactúan con los servicios de emergencia y protección civil,
+                mejorando la resiliencia comunitaria ante desastres.
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <!-- Miembros del equipo -->
+    <div class="team-section">
+      <h2>Conozca a Nuestro Equipo</h2>
+      
+      <div class="team-grid">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="12" size-md="6" size-lg="4" *ngFor="let member of teamMembers">
+              <ion-card class="member-card">
+                <div class="member-avatar">
+                  <ion-avatar>
+                    <img [src]="member.image" alt="{{member.name}}" />
+                  </ion-avatar>
+                </div>
+                
+                <ion-card-header>
+                  <ion-card-title>{{member.name}}</ion-card-title>
+                  <ion-card-subtitle>{{member.role}}</ion-card-subtitle>
+                </ion-card-header>
+                
+                <ion-card-content>
+                  <p class="member-bio">{{member.bio}}</p>
+                  
+                  <div class="social-links">
+                    <ion-button fill="clear" *ngIf="member.social.github" (click)="openSocialLink(member.social.github)">
+                      <ion-icon name="logo-github"></ion-icon>
+                    </ion-button>
+                    <ion-button fill="clear" *ngIf="member.social.linkedin" (click)="openSocialLink(member.social.linkedin)">
+                      <ion-icon name="logo-linkedin"></ion-icon>
+                    </ion-button>
+                    <ion-button fill="clear" *ngIf="member.social.twitter" (click)="openSocialLink(member.social.twitter)">
+                      <ion-icon name="logo-twitter"></ion-icon>
+                    </ion-button>
+                  </div>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+
+    <!-- Valores -->
+    <div class="values-section">
+      <h2>Nuestros Valores</h2>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12" size-md="6" size-lg="3">
+            <div class="value-item">
+              <ion-icon name="shield-outline"></ion-icon>
+              <h3>Compromiso</h3>
+              <p>Nos dedicamos completamente a cada proyecto, asegurando resultados de alta calidad.</p>
+            </div>
+          </ion-col>
+          <ion-col size="12" size-md="6" size-lg="3">
+            <div class="value-item">
+              <ion-icon name="bulb-outline"></ion-icon>
+              <h3>Innovación</h3>
+              <p>Buscamos constantemente nuevas formas de resolver problemas y mejorar soluciones.</p>
+            </div>
+          </ion-col>
+          <ion-col size="12" size-md="6" size-lg="3">
+            <div class="value-item">
+              <ion-icon name="people-outline"></ion-icon>
+              <h3>Colaboración</h3>
+              <p>Trabajamos juntos, combinando nuestras fortalezas para lograr resultados excepcionales.</p>
+            </div>
+          </ion-col>
+          <ion-col size="12" size-md="6" size-lg="3">
+            <div class="value-item">
+              <ion-icon name="heart-outline"></ion-icon>
+              <h3>Impacto Social</h3>
+              <p>Creamos tecnología con propósito, enfocada en mejorar vidas y comunidades.</p>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <!-- Pie de página -->
+    <div class="footer-section">
+      <p>© {{currentYear}} Equipo de Desarrollo. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</ion-content>
