@@ -13,7 +13,10 @@ import {
   IonInput,
   IonTextarea,
   LoadingController,
-  ToastController
+  ToastController,
+  IonMenu,
+  IonMenuButton,
+  IonButtons
 } from '@ionic/angular/standalone';
 import { NuevaSituacionService } from './nueva-situacion.service';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
@@ -39,7 +42,10 @@ import { AuthService } from '../auth/auth.service';
     IonIcon,
     IonButton,
     IonInput,
-    IonTextarea
+    IonTextarea,
+    IonMenu,
+    IonMenuButton,
+    IonButtons
   ],
 })
 export class NuevaSituacionPage {

@@ -1,9 +1,8 @@
-import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA, ViewChild, ElementRef } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { register } from 'swiper/element/bundle';
-
 // Registrar Swiper con elementos personalizados
 register();
 
@@ -13,10 +12,11 @@ register();
   styleUrls: ['./inicio.page.scss'],
   standalone: true,
   imports: [IonicModule, CommonModule, RouterModule],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA] // Add this line
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class InicioPage implements OnInit {
-  // Opciones para el slider
+  @ViewChild('swiperRef') swiperRef: ElementRef | undefined;
+  
   swiperOptions = {
     initialSlide: 0,
     speed: 400,
@@ -27,7 +27,7 @@ export class InicioPage implements OnInit {
     slidesPerView: 1,
     pagination: true
   };
-
+  
   sliderImages = [
     {
       src: 'assets/images/1.png',
@@ -46,8 +46,20 @@ export class InicioPage implements OnInit {
       alt: 'Defensa Civil - Imagen 4'
     }
   ];
-
+  
   constructor() {}
-
+  
   ngOnInit() {}
+  
+  slideNext() {
+    if (this.swiperRef) {
+      this.swiperRef.nativeElement.swiper.slideNext();
+    }
+  }
+  
+  slidePrev() {
+    if (this.swiperRef) {
+      this.swiperRef.nativeElement.swiper.slidePrev();
+    }
+  }
 }
