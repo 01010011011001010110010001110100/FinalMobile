@@ -1,5 +1,5 @@
 import { Component, AfterViewInit } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonLoading } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonLoading, IonMenu, IonMenuButton, IonButtons } from '@ionic/angular/standalone';
 import * as L from 'leaflet';
 import { CommonModule } from '@angular/common';
 import { MisSituacionesService } from 'src/app/mis-situaciones/mis-situaciones.service';
@@ -17,7 +17,7 @@ L.Icon.Default.mergeOptions({
   templateUrl: './mapa-situaciones.page.html',
   styleUrls: ['./mapa-situaciones.page.scss'],
   standalone: true,
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonLoading, CommonModule]
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonLoading, CommonModule, IonMenu, IonMenuButton, IonButtons]
 })
 export class MapaSituacionesPage {
   loading = false;

@@ -14,7 +14,10 @@ import {
   IonCardTitle,
   IonCardContent,
   IonIcon,
-  IonChip
+  IonChip,
+  IonMenu,
+  IonMenuButton,
+  IonButtons
 } from '@ionic/angular/standalone';
 import { MisSituacionesService } from './mis-situaciones.service';
 
@@ -38,7 +41,10 @@ import { MisSituacionesService } from './mis-situaciones.service';
     IonCardTitle,
     IonCardContent,
     IonIcon,
-    IonChip
+    IonChip,
+    IonMenu,
+    IonMenuButton,
+    IonButtons
   ],
 })
 export class MisSituacionesPage implements OnInit {

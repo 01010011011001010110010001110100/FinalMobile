@@ -12,7 +12,10 @@ import {
   IonItem,
   IonThumbnail,
   IonImg,
-  IonLabel
+  IonLabel,
+  IonMenu,
+  IonMenuButton,
+  IonButtons
 } from '@ionic/angular/standalone';
 import { NoticiasEspecificasResponse } from '../dtos/noticias-especificas.response';
 import { NoticiasEspecificasService } from './noticias-especificas.service';
@@ -35,7 +38,10 @@ import { NoticiasEspecificasService } from './noticias-especificas.service';
     IonItem,
     IonThumbnail,
     IonImg,
-    IonLabel
+    IonLabel,
+    IonMenu,
+    IonMenuButton,
+    IonButtons
   ],
 })
 export class NoticiasEspecificasPage implements OnInit {

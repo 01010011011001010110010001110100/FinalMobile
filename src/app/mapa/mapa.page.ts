@@ -8,7 +8,10 @@ import {
   IonToolbar, 
   IonTitle, 
   IonContent,
-  IonLoading
+  IonLoading,
+  IonMenu,
+  IonMenuButton,
+  IonButtons,
 } from '@ionic/angular/standalone';
 import { LeafletHelper } from '../helpers/leaflet.helper';
 
@@ -30,7 +33,10 @@ L.Icon.Default.mergeOptions({
     IonToolbar,
     IonTitle,
     IonContent,
-    IonLoading
+    IonLoading,
+    IonMenu,
+    IonMenuButton,
+    IonButtons,
   ],
   selector: 'app-mapa',
   templateUrl: './mapa.page.html',
