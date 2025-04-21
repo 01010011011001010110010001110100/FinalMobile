@@ -15,6 +15,8 @@ import { NoticiasPage } from './noticias/noticias.page';
 import { MedidasPage } from './medidas/medidas.page';
 import { MiembrosPage } from './miembros/miembros.page';
 import { MedidaDetallePage } from './medida-detalle/medida-detalle.page';
+import { VoluntarioPage } from './voluntario/voluntario.page';
+import { ChangePasswordPage } from './change-password/change-password.page';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },
@@ -34,5 +36,8 @@ export const routes: Routes = [
   { path: 'medidas', component: MedidasPage },
   { path: 'medidas/:id', component: MedidaDetallePage },
   { path: 'miembros', component: MiembrosPage },
+  { path: 'change-password', component: ChangePasswordPage },
+  { path: 'voluntario', component: VoluntarioPage },
+
 
 ];
