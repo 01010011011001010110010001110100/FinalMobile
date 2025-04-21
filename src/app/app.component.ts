@@ -45,7 +45,7 @@ export class AppComponent {
   constructor(public auth: AuthService, private router: Router) {
     this.pageToShow$ = this.usuario$.pipe(
       map((usuario: any) => usuario
-        ? this.appPages.filter(p => p.url !== '/login')
+        ? this.appPages.filter(p => p.url !== '/login' && p.url !== '/voluntario')
         : this.appPages
       )
     );
