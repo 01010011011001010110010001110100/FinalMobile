@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { AuthService } from '../auth/auth.service';
 
 export interface ApiResponse<T> {
   exito: boolean;
@@ -12,10 +13,9 @@ export interface ApiResponse<T> {
 export class NuevaSituacionService {
   private apiUrl = 'https://adamix.net/defensa_civil/def/nueva_situacion.php';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private auth: AuthService) {}
 
   reportarSituacion(
-    token: string,
     titulo: string,
     descripcion: string,
     fotoBase64: string,
@@ -23,7 +23,7 @@ export class NuevaSituacionService {
     longitud: string
   ): Observable<ApiResponse<null>> {
     const body = new HttpParams()
-      .set('token', token)
+      .set('token', this.auth.token)
       .set('titulo', titulo)
       .set('descripcion', descripcion)
       .set('foto', fotoBase64)

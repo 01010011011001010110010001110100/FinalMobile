@@ -47,8 +47,7 @@ export class MisSituacionesPage implements OnInit {
   constructor(private misSituacionesSvc: MisSituacionesService) {}
 
   ngOnInit() {
-    const token = '674c5cb181174f8e7d1737bcd0147dfe';
-    this.misSituacionesSvc.obtenerMisSituaciones(token).subscribe((res) => {
+    this.misSituacionesSvc.obtenerMisSituaciones().subscribe((res) => {
       if (res.exito) {
         this.situaciones = res.datos;
       }

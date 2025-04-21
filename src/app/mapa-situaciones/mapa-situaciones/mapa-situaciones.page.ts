@@ -25,7 +25,7 @@ export class MapaSituacionesPage {
   public defLat: number = 18.47893;
   public defLon: number = -69.89178;
 
-  constructor(private misSituacionesService: MisSituacionesService) {}
+  constructor(private misSituacionesService: MisSituacionesService, ) {}
 
   ionViewDidEnter() {
     this.loading = true;
@@ -46,10 +46,8 @@ export class MapaSituacionesPage {
       attribution: '© OpenStreetMap contributors'
     }).addTo(map);
 
-    const token = "674c5cb181174f8e7d1737bcd0147dfe";
-
     // Obtener situaciones del historial
-    this.misSituacionesService.obtenerMisSituaciones(token).subscribe(res => {
+    this.misSituacionesService.obtenerMisSituaciones().subscribe(res => {
       if (res.exito) {
         this.situaciones = res.datos;
 

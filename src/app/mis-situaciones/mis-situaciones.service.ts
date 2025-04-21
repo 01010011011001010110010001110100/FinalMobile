@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApiResponse } from '../dtos/api.response';
 import { SituacionResponse } from '../dtos/situacion.response';
+import { AuthService } from '../auth/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,10 +12,10 @@ import { SituacionResponse } from '../dtos/situacion.response';
 export class MisSituacionesService {
   private url = 'https://adamix.net/defensa_civil/def/situaciones.php';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private auth: AuthService) {}
 
-  obtenerMisSituaciones(token: string): Observable<ApiResponse<SituacionResponse[]>> {
-    const body = new HttpParams().set('token', token);
+  obtenerMisSituaciones(): Observable<ApiResponse<SituacionResponse[]>> {
+    const body = new HttpParams().set('token', this.auth.token);
     const headers = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded'
     });
