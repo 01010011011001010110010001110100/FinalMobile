@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Quiero ser Voluntario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="form" (ngSubmit)="registrar()">
+    <ion-item>
+      <ion-label position="floating">Cédula</ion-label>
+      <ion-input formControlName="cedula"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input formControlName="nombre"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Apellido</ion-label>
+      <ion-input formControlName="apellido"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" formControlName="clave"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Correo Electrónico</ion-label>
+      <ion-input formControlName="correo" type="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Teléfono</ion-label>
+      <ion-input formControlName="telefono"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" type="submit" [disabled]="cargando || form.invalid">
+      {{ cargando ? 'Registrando...' : 'Registrarme' }}
+    </ion-button>
+  </form>
+
+  <ion-text color="primary" *ngIf="mensaje">
+    <p class="ion-margin-top">{{ mensaje }}</p>
+  </ion-text>
+</ion-content>

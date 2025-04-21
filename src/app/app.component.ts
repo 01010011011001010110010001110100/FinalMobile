@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonNote, IonMenuToggle, IonItem, IonIcon, IonLabel, IonRouterOutlet, IonRouterLink } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { home, peopleCircleOutline, logIn, logOut, book, videocam, map as mapIcon, bonfire, newspaper, alertCircle, fingerPrint, locate, informationCircle, reader } from 'ionicons/icons';
+import { home, peopleCircleOutline, logIn, logOut, book, videocam, map as mapIcon, bonfire, newspaper, alertCircle, fingerPrint, locate, informationCircle, reader, keyOutline, roseOutline } from 'ionicons/icons';
 import { AuthService } from './auth/auth.service';
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
@@ -21,6 +21,7 @@ export class AppComponent {
 
   public appPages: AppPage[] = [
     { title: 'Inicio', url: '/inicio', icon: 'home' },
+    { title: 'Ser Voluntario', url: '/voluntario', icon: 'rose-outline' },
     { title: 'Iniciar Sesion', url: '/login', icon: 'log-in' },
     { title: 'Historia', url: '/historia', icon: 'book' },
     { title: 'Servicios', url: '/servicios', icon: 'reader' },
@@ -38,6 +39,7 @@ export class AppComponent {
   public postLogged = [
     { title: 'Noticias Especificas', url: '/noticias-especificas', icon: 'newspaper' },
     { title: 'Nueva Situacion', url: '/nueva-situacion', icon: 'alert-circle' },
+    { title: 'Cambiar Contraseña', url: '/change-password', icon: 'key-outline' },
     { title: 'Mis Situaciones', url: '/mis-situaciones', icon: 'finger-print' },
     { title: 'Mapa Situaciones', url: '/mapa-situaciones', icon: 'locate' }
   ];
@@ -49,7 +51,7 @@ export class AppComponent {
         : this.appPages
       )
     );
-    addIcons({ home, logIn, logOut, book, videocam, mapIcon, bonfire, newspaper, alertCircle, fingerPrint, locate, informationCircle, reader, peopleCircleOutline });
+    addIcons({ home, logIn, logOut, book, videocam, mapIcon, bonfire, newspaper, alertCircle, fingerPrint, locate, informationCircle, reader, peopleCircleOutline, keyOutline, roseOutline });
   }
 
   logout() {
