@@ -102,6 +102,14 @@ ion-menu.ios ion-note {
   padding-left: 16px;
   padding-right: 16px;
 }
+.logout-button {
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  --background: #272727; 
+  font-weight: bold; 
+}
 
 ion-menu.ios ion-note {
   margin-bottom: 8px;
