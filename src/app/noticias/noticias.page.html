@@ -1,0 +1,18 @@
+<ion-content>
+  <ion-list *ngIf="noticias.length > 0; else cargando">
+    <ion-item *ngFor="let noticia of noticias">
+      <ion-thumbnail slot="start">
+        <img [src]="noticia.foto" />
+      </ion-thumbnail>
+      <ion-label>
+        <h3>{{ noticia.titulo }}</h3>
+        <p>{{ noticia.fecha }}</p>
+        <p class="ion-text-wrap">{{ noticia.contenido }}</p> <!-- Aquí va el contenido -->
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #cargando>
+    <ion-spinner class="ion-margin"></ion-spinner>
+  </ng-template>
+</ion-content>

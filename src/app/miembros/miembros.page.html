@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Miembros</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="miembros.length > 0; else cargando">
+    <ion-item *ngFor="let miembro of miembros">
+      <ion-avatar slot="start">
+        <img [src]="miembro.foto" />
+      </ion-avatar>
+      <ion-label>
+        <h3>{{ miembro.nombre }}</h3>
+        <p>{{ miembro.cargo }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #cargando>
+    <ion-spinner class="ion-margin"></ion-spinner>
+  </ng-template>
+</ion-content>

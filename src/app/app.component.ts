@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonNote, IonMenuToggle, IonItem, IonIcon, IonLabel, IonRouterOutlet, IonRouterLink } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { home, book, videocam, map, bonfire, newspaper, alertCircle, fingerPrint, locate, informationCircle, reader } from 'ionicons/icons';
+import { home, book, videocam, map, bonfire, newspaper, alertCircle, fingerPrint, locate, informationCircle, reader, peopleCircleOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-root',
@@ -16,8 +16,11 @@ export class AppComponent {
     { title: 'Inicio', url: '/inicio', icon: 'home' },
     { title: 'Historia', url: '/historia', icon: 'book' },
     { title: 'Servicios', url: '/servicios', icon: 'reader' },
+    { title: 'Noticias', url: '/noticias', icon: 'newspaper' },
     { title: 'Videos', url: '/videos', icon: 'videocam' },
     { title: 'Mapa Albergues', url: '/mapa', icon: 'map' },
+    { title: 'Medidas preventivas', url: '/medidas', icon: 'alert-circle' },
+    { title: 'Miembros', url: '/miembros', icon: 'people-circle-outline' },
     { title: 'Albergues', url: '/albergues', icon: 'bonfire' },
     { title: 'Acerca', url: '/acerca', icon: 'information-circle' }
   ];
@@ -30,6 +33,6 @@ export class AppComponent {
   ];
 
   constructor() {
-    addIcons({ home, book, videocam, map, bonfire, newspaper, alertCircle, fingerPrint, locate, informationCircle, reader });
+    addIcons({ home, book, videocam, map, bonfire, newspaper, alertCircle, fingerPrint, locate, informationCircle, reader, peopleCircleOutline });
   }
 }

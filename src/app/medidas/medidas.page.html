@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Medidas Preventivas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="medidas.length > 0; else cargando">
+    <ion-item *ngFor="let medida of medidas" button (click)="verDetalle(medida)">
+      <ion-thumbnail slot="start">
+        <img [src]="medida.foto" />
+      </ion-thumbnail>
+      <ion-label>
+        <h3>{{ medida.titulo }}</h3>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #cargando>
+    <ion-spinner class="ion-margin"></ion-spinner>
+  </ng-template>
+</ion-content>
