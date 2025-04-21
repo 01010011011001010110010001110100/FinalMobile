@@ -1,11 +1,12 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>Defensa Civil</ion-title>
   </ion-toolbar>
 </ion-header>
+
 <ion-content>
   <div class="slider-container">
     <swiper-container [options]="swiperOptions" #swiperRef>
@@ -19,17 +20,17 @@
         </div>
       </swiper-slide>
     </swiper-container>
-    
+
     <!-- Botones de navegación personalizados -->
     <ion-button class="nav-button prev-button" fill="clear" (click)="slidePrev()">
       <ion-icon name="chevron-back-outline" slot="icon-only"></ion-icon>
     </ion-button>
-    
+
     <ion-button class="nav-button next-button" fill="clear" (click)="slideNext()">
       <ion-icon name="chevron-forward-outline" slot="icon-only"></ion-icon>
     </ion-button>
   </div>
-  
+
   <div class="content-container">
     <h2>Bienvenidos a Defensa Civil</h2>
     <p>
@@ -37,11 +38,13 @@
       de Defensa Civil en un determinado lugar, orientando las acciones a proteger la integridad física de la población
       y su patrimonio frente a los efectos de los fenómenos naturales o antrópicos.
     </p>
-    <ion-button class="boton2" expand="block" routerLink="/historia" color="primary">
-      Conoce nuestra historia
+
+    <ion-button class="boton2" expand="block" routerLink="/historia">
+      📘 Conoce nuestra historia
     </ion-button>
-    <ion-button expand="block" routerLink="/videos" color="primary">
-      Mira nuestros videos  
+
+    <ion-button expand="block" routerLink="/videos">
+      🎥 Mira nuestros videos  
     </ion-button>
   </div>
 </ion-content>

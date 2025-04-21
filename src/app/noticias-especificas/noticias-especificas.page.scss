@@ -1,0 +1,26 @@
+.spinner-center {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  
+  ion-list {
+    margin-top: 16px;
+  }
+  
+  ion-item {
+    --background: rgba(var(--ion-color-azul-dc-rgb), 0.05);
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  ion-label h2 {
+    color: var(--ion-color-azul-dc);
+    font-weight: bold;
+  }
+  
+  ion-label p {
+    font-size: 0.85rem;
+    color: var(--ion-color-medium);
+  }
+  

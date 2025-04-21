@@ -1,5 +1,6 @@
+<!-- historia.component.html -->
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -11,15 +12,24 @@
   <div class="content-container">
     <h1 class="main-title">Nuestra Historia</h1>
 
-    <p class="history-paragraph">La Defensa Civil fue creada como una institución para servir a la población en momentos de desastres y emergencias.
-      A lo largo de nuestra historia, hemos participado en rescates, ayuda humanitaria y prevención de riesgos.</p>
+    <p class="history-paragraph">
+      La Defensa Civil fue creada como una institución para servir a la población en momentos de desastres y emergencias.
+      A lo largo de nuestra historia, hemos participado en rescates, ayuda humanitaria y prevención de riesgos.
+    </p>
 
-    <p class="history-paragraph">Desde sus inicios, la organización ha evolucionado para adaptarse a las necesidades contemporáneas manteniendo
-      siempre su misión principal: proteger y ayudar a la población civil.</p>
+    <p class="history-paragraph">
+      Desde sus inicios, la organización ha evolucionado para adaptarse a las necesidades contemporáneas manteniendo
+      siempre su misión principal: proteger y ayudar a la población civil.
+    </p>
 
     <div class="video-container">
-      <youtube-player [videoId]="videoId" suggestedQuality="highres"
-                      [height]="250" [width]="400" class="history-video"></youtube-player>
+      <youtube-player
+        [videoId]="videoId"
+        suggestedQuality="highres"
+        [height]="250"
+        [width]="400"
+        class="history-video"
+      ></youtube-player>
     </div>
 
     <h2 class="section-title">Principales hitos</h2>
@@ -28,21 +38,27 @@
       <ion-item class="milestone-item">
         <ion-label class="milestone-label">
           <h3 class="milestone-title">Fundación</h3>
-          <p class="milestone-description">La Defensa Civil fue establecida oficialmente para coordinar las acciones de protección civil.</p>
+          <p class="milestone-description">
+            La Defensa Civil fue establecida oficialmente para coordinar las acciones de protección civil.
+          </p>
         </ion-label>
       </ion-item>
 
       <ion-item class="milestone-item">
         <ion-label class="milestone-label">
           <h3 class="milestone-title">Primera intervención mayor</h3>
-          <p class="milestone-description">Tras un desastre natural de gran magnitud, la Defensa Civil coordinó el rescate y la ayuda humanitaria.</p>
+          <p class="milestone-description">
+            Tras un desastre natural de gran magnitud, la Defensa Civil coordinó el rescate y la ayuda humanitaria.
+          </p>
         </ion-label>
       </ion-item>
 
       <ion-item class="milestone-item">
         <ion-label class="milestone-label">
           <h3 class="milestone-title">Modernización</h3>
-          <p class="milestone-description">Incorporación de nuevas tecnologías y protocolos internacionales para mejorar la respuesta a emergencias.</p>
+          <p class="milestone-description">
+            Incorporación de nuevas tecnologías y protocolos internacionales para mejorar la respuesta a emergencias.
+          </p>
         </ion-label>
       </ion-item>
     </ion-list>

@@ -1,0 +1,55 @@
+/* mis-situaciones.component.scss */
+
+ion-card {
+    --background: rgba(var(--ion-color-azul-dc-rgb), 0.05);
+    border-radius: 8px;
+    margin-bottom: 16px;
+  }
+  
+  ion-card-header {
+    padding: 16px;
+    background: var(--ion-color-light);
+    border-radius: 8px 8px 0 0;
+  }
+  
+  ion-card-title {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: var(--ion-color-dark);
+  }
+  
+  ion-card-content {
+    padding: 16px;
+  }
+  
+  ion-chip {
+    --border-radius: 12px;
+    --color: white;
+  }
+  
+  ion-icon {
+    margin-right: 8px;
+  }
+  
+  p {
+    margin: 8px 0;
+    color: var(--ion-color-dark);
+  }
+  
+  ion-button {
+    --background: var(--ion-color-azul-dc);
+    --color: white;
+    --border-radius: 8px;
+  }
+  
+  ion-card img {
+    border-radius: 8px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .ion-padding {
+    padding: 16px;
+  }
+  

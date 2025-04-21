@@ -1,0 +1,22 @@
+/* quiero-ser-voluntario.component.scss */
+
+ion-item {
+    margin-bottom: 12px;
+  }
+  
+  ion-input {
+    --padding-start: 12px;
+    --padding-end: 12px;
+  }
+  
+  ion-button {
+    --background: var(--ion-color-azul-dc);
+    --color: white;
+    --border-radius: 8px;
+    margin-top: 16px;
+  }
+  
+  .ion-padding {
+    padding: 16px;
+  }
+  

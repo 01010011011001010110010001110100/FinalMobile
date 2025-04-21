@@ -1,0 +1,51 @@
+/* iniciar-sesion.component.scss */
+
+ion-item {
+    margin-bottom: 16px;
+  }
+  
+  ion-input {
+    --padding-start: 12px;
+    --padding-end: 12px;
+  }
+  
+  ion-text {
+    font-size: 0.9em;
+  }
+  
+  ion-button {
+    --background: var(--ion-color-azul-dc);
+    --color: white;
+    --border-radius: 8px;
+  }
+  
+  .ion-padding {
+    padding: 16px;
+  }
+  
+  ion-card {
+    border-radius: 10px;
+  }
+  
+  ion-card-header {
+    text-align: center;
+  }
+  
+  ion-card-title {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  ion-card-subtitle {
+    font-size: 1em;
+    color: var(--ion-color-medium);
+  }
+  
+  .ion-margin-top {
+    margin-top: 16px;
+  }
+  
+  .ion-text-center {
+    text-align: center;
+  }
+  

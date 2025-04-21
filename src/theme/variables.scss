@@ -1,2 +1,24 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+  :root {
+    --ion-color-naranja-dc: #F7931E;
+    --ion-color-naranja-dc-rgb: 247, 147, 30;
+    --ion-color-naranja-dc-contrast: #ffffff;
+    --ion-color-naranja-dc-contrast-rgb: 255, 255, 255;
+    --ion-color-naranja-dc-shade: #da821a;
+    --ion-color-naranja-dc-tint: #f89e35;
+  
+    --ion-color-azul-dc: #003366;
+    --ion-color-azul-dc-rgb: 0, 51, 102;
+    --ion-color-azul-dc-contrast: #ffffff;
+    --ion-color-azul-dc-contrast-rgb: 255, 255, 255;
+    --ion-color-azul-dc-shade: #002d5a;
+    --ion-color-azul-dc-tint: #1a4780;
+  }
+  
+  // Estilos de toolbar y título
+  ion-toolbar {
+    --background: var(--ion-color-naranja-dc) !important;
+    --color: var(--ion-color-naranja-dc-contrast) !important;
+    font-weight: bold !important;
+  }

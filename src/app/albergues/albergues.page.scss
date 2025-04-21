@@ -1,0 +1,24 @@
+ion-searchbar {
+    --background: rgba(var(--ion-color-naranja-dc-rgb), 0.1);
+    --color: var(--ion-color-azul-dc);
+    margin: 10px;
+    border-radius: 10px;
+  }
+  
+  ion-item {
+    --background: rgba(var(--ion-color-azul-dc-rgb), 0.05);
+    border-radius: 8px;
+    margin: 8px 12px;
+  }
+  
+  h2 {
+    color: var(--ion-color-azul-dc);
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  
+  p {
+    color: white;
+    font-size: 0.9rem;
+  }
+  

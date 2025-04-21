@@ -4,6 +4,7 @@ import { IonicModule } from '@ionic/angular';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http'; 
 import { AuthService } from '../auth/auth.service';
+import { ToastController } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-change-password',
@@ -11,17 +12,16 @@ import { AuthService } from '../auth/auth.service';
   imports: [
     CommonModule,
     IonicModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   templateUrl: './change-password.page.html',
   styleUrls: ['./change-password.page.scss'],
 })
 export class ChangePasswordPage {
   form: FormGroup;
-  mensaje: string = '';
   cargando: boolean = false;
 
-  constructor(private fb: FormBuilder, private http: HttpClient, private auth: AuthService) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private auth: AuthService, private toastCtrl: ToastController) {
     this.form = this.fb.group({
       clave_anterior: ['', Validators.required],
       clave_nueva: ['', Validators.required],
@@ -30,7 +30,6 @@ export class ChangePasswordPage {
 
   async cambiarClave() {
     this.cargando = true;
-    this.mensaje = '';
 
     const body = new HttpParams()
       .set('token', this.auth.token)
@@ -43,12 +42,22 @@ export class ChangePasswordPage {
 
     this.http.post<any>('https://adamix.net/defensa_civil/def/cambiar_clave.php', body.toString(), { headers })
       .subscribe({
-        next: (resp) => {
-          this.mensaje = resp.mensaje;
+        next: async (resp) => {
+          const toast = await this.toastCtrl.create({
+            message: resp.mensaje,
+            duration: 2000,
+            color: resp.exito ? 'success' : 'danger',
+          });
+          toast.present();
           this.cargando = false;
         },
-        error: (err) => {
-          this.mensaje = 'Error al conectar con el servidor.';
+        error: async (err) => {
+          const toast = await this.toastCtrl.create({
+            message: 'Ocurrio un error cambiando password',
+            duration: 2000,
+            color: 'danger',
+          });
+          toast.present();
           this.cargando = false;
         }
       });

@@ -1,0 +1,24 @@
+ion-item {
+    --background: rgba(var(--ion-color-azul-dc-rgb), 0.05);
+    border-radius: 8px;
+    margin: 8px 12px;
+  }
+  
+  ion-avatar img {
+    border: 2px solid var(--ion-color-naranja-dc);
+    border-radius: 50%;
+  }
+  
+  h3 {
+    color: var(--ion-color-azul-dc);
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  p {
+    color: white;
+    font-style: italic;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  

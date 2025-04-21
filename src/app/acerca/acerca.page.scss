@@ -1,197 +1,130 @@
+/* acerca-de-nosotros.component.scss */
+
 .about-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    
-    h1, h2, h3 {
-      font-weight: 600;
-    }
-    
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-    
-    h2 {
-      font-size: 2rem;
-      margin: 2rem 0 1rem;
-      text-align: center;
-    }
+  padding: 16px;
+  color: white;
+}
+
+.header-section {
+  text-align: center;
+  margin-bottom: 30px;
+
+  h1 {
+    color: var(--ion-color-azul-dc);
+    font-weight: bold;
   }
-  
-  // Header Section
-  .header-section {
-    text-align: center;
-    padding: 30px 20px;
-    margin-bottom: 20px;
-    
-    .header-description {
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: var(--ion-color-medium);
-    }
+
+  .header-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-top: 10px;
   }
-  
-  // Mission and Vision
-  .mission-vision-section {
-    margin: 40px 0;
-    
-    .info-card {
-      height: 100%;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      transition: transform 0.3s ease;
-      
-      &:hover {
-        transform: translateY(-5px);
-      }
-      
-      ion-card-header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      
-      ion-card-content {
-        font-size: 1rem;
-        line-height: 1.6;
-        text-align: center;
-      }
+}
+
+.mission-vision-section {
+  ion-card {
+    --background: rgba(var(--ion-color-azul-dc-rgb), 0.1);
+    border-radius: 12px;
+    margin: 10px 0;
+
+    ion-card-title {
+      color: var(--ion-color-naranja-dc);
+      font-weight: bold;
     }
-    
+
+    ion-card-content {
+      font-size: 0.9rem;
+    }
+
     .section-icon {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      color: var(--ion-color-primary);
+      font-size: 24px;
+      color: var(--ion-color-naranja-dc);
+      margin-right: 8px;
     }
   }
-  
-  // Team Section
-  .team-section {
-    margin: 60px 0;
-    
-    .member-card {
-      height: 100%;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      
-      &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-      }
-    }
-    
-    .member-avatar {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-      
-      ion-avatar {
-        width: 120px;
-        height: 120px;
-        margin: 0 auto;
-        border: 4px solid var(--ion-color-light);
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        
-        img {
-          object-fit: cover;
-        }
-      }
-    }
-    
-    ion-card-header {
-      text-align: center;
-    }
-    
-    .member-bio {
-      text-align: center;
-      font-size: 0.95rem;
-      line-height: 1.5;
-      color: var(--ion-color-medium);
-      margin-bottom: 20px;
-    }
-    
-    .social-links {
-      display: flex;
-      justify-content: center;
-      
-      ion-button {
-        margin: 0 5px;
-        
-        ion-icon {
-          font-size: 1.4rem;
-        }
-      }
-    }
-  }
-  
-  // Values Section
-  .values-section {
-    margin: 60px 0;
-    
-    .value-item {
-      text-align: center;
-      padding: 20px;
-      transition: transform 0.3s ease;
-      
-      &:hover {
-        transform: translateY(-5px);
-      }
-      
-      ion-icon {
-        font-size: 3rem;
-        color: var(--ion-color-primary);
-        margin-bottom: 15px;
-      }
-      
-      h3 {
-        font-size: 1.3rem;
-        margin-bottom: 10px;
-        font-weight: 600;
-      }
-      
-      p {
-        font-size: 0.95rem;
-        line-height: 1.5;
-        color: var(--ion-color-medium);
-      }
-    }
-  }
-  
-  // Footer
-  .footer-section {
-    margin-top: 60px;
-    padding: 20px 0;
+}
+
+.team-section {
+  margin-top: 40px;
+
+  h2 {
     text-align: center;
-    border-top: 1px solid var(--ion-color-light);
-    
+    color: var(--ion-color-azul-dc);
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .member-card {
+    text-align: center;
+    border-radius: 12px;
+    --background: rgba(var(--ion-color-naranja-dc-rgb), 0.1);
+    padding-bottom: 10px;
+
+    .member-avatar {
+      margin-top: 10px;
+
+      ion-avatar {
+        margin: 0 auto;
+        height: 90px;
+        width: 90px;
+      }
+    }
+
+    ion-card-title {
+      color: var(--ion-color-naranja-dc);
+    }
+
+    .member-bio {
+      font-size: 0.85rem;
+      margin: 10px 0;
+    }
+
+    .social-links {
+      ion-button {
+        color: var(--ion-color-azul-dc);
+      }
+
+      ion-icon {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.values-section {
+  margin-top: 40px;
+
+  h2 {
+    text-align: center;
+    color: var(--ion-color-azul-dc);
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .value-item {
+    text-align: center;
+    padding: 15px;
+
+    ion-icon {
+      font-size: 30px;
+      color: var(--ion-color-naranja-dc);
+      margin-bottom: 8px;
+    }
+
+    h3 {
+      color: var(--ion-color-azul-dc);
+      font-weight: bold;
+    }
+
     p {
-      color: var(--ion-color-medium);
+      font-size: 0.85rem;
     }
   }
-  
-  // Responsive adjustments
-  @media (max-width: 768px) {
-    .header-section {
-      h1 {
-        font-size: 2rem;
-      }
-      
-      .header-description {
-        font-size: 1rem;
-      }
-    }
-    
-    .member-card {
-      margin-bottom: 20px;
-    }
-    
-    .value-item {
-      margin-bottom: 30px;
-    }
-  }
+}
+
+.footer-section {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--ion-color-medium);
+}

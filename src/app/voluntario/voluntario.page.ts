@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
+import { ToastController } from '@ionic/angular/standalone';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
@@ -17,10 +18,9 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 })
 export class VoluntarioPage {
   form: FormGroup;
-  mensaje: string = '';
   cargando: boolean = false;
 
-  constructor(private fb: FormBuilder, private http: HttpClient) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private toastCtrl: ToastController) {
     this.form = this.fb.group({
       cedula: ['', Validators.required],
       nombre: ['', Validators.required],
@@ -33,7 +33,6 @@ export class VoluntarioPage {
 
   registrar() {
     this.cargando = true;
-    this.mensaje = '';
 
     const body = new HttpParams()
       .set('cedula', this.form.value.cedula)
@@ -49,15 +48,31 @@ export class VoluntarioPage {
 
     this.http.post<any>('https://adamix.net/defensa_civil/def/registro.php', body.toString(), { headers })
       .subscribe({
-        next: (resp) => {
-          this.mensaje = resp.mensaje;
+        next: async (resp) => {
           this.cargando = false;
+          const toast = await this.toastCtrl.create({
+            message: resp.mensaje,
+            duration: 2000,
+            color: 'danger',
+          });
+          toast.present();
           if (resp.exito) {
+            const toast = await this.toastCtrl.create({
+              message: 'Se creo con exito',
+              duration: 2000,
+              color: 'success',
+            });
+            toast.present();
             this.form.reset();
           }
         },
-        error: () => {
-          this.mensaje = 'Error al conectar con el servidor.';
+        error: async () => {
+          const toast = await this.toastCtrl.create({
+            message: 'Ocurrio un error creando voluntario',
+            duration: 2000,
+            color: 'danger',
+          });
+          toast.present();
           this.cargando = false;
         }
       });

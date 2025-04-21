@@ -37,7 +37,5 @@ export const routes: Routes = [
   { path: 'medidas/:id', component: MedidaDetallePage },
   { path: 'miembros', component: MiembrosPage },
   { path: 'change-password', component: ChangePasswordPage },
-  { path: 'voluntario', component: VoluntarioPage },
-
-
+  { path: 'voluntario', component: VoluntarioPage }
 ];
