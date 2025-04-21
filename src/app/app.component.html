@@ -4,8 +4,8 @@
       <ion-content>
         <ion-list id="inbox-list">
           <ion-list-header style="margin-bottom: 25px;">Home</ion-list-header>
-
-          @for (p of appPages; track p; let i = $index) {
+        
+          @for (p of pageToShow$ | async; track p; let i = $index) {
             <ion-menu-toggle auto-hide="false">
               <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
                 <ion-icon aria-hidden="true" slot="start" [md]="p.icon"></ion-icon>
@@ -14,8 +14,8 @@
             </ion-menu-toggle>
           }
         </ion-list>
-
-        <ion-list id="inbox-list">
+        
+        <ion-list id="inbox-list" *ngIf="usuario$ | async as usuario">
           <ion-list-header style="margin-bottom: 25px;">Post LogIn</ion-list-header>
 
           @for (p of postLogged; track p; let i = $index) {
@@ -26,6 +26,12 @@
               </ion-item>
             </ion-menu-toggle>
           }
+          <ion-menu-toggle auto-hide="false">
+            <ion-item (click)="logout()" lines="none" detail="false">
+              <ion-icon aria-hidden="true" slot="start" name="log-out"></ion-icon>
+              <ion-label>Cerrar sesión</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
         </ion-list>
       </ion-content>
     </ion-menu>

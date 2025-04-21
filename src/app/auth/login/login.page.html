@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Iniciar Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Bienvenido</ion-card-title>
+        <ion-card-subtitle>Ingresa tus credenciales</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Cédula</ion-label>
+          <ion-input
+            formControlName="cedula"
+            type="text"
+            inputmode="numeric"
+          ></ion-input>
+        </ion-item>
+
+        <ion-item *ngIf="form.controls['cedula'].invalid && form.controls['cedula'].touched">
+          <ion-text color="danger">
+            <small>La cédula es obligatoria</small>
+          </ion-text>
+        </ion-item>
+
+        <ion-item class="ion-margin-top">
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input
+            formControlName="contrasena"
+            type="password"
+            autocomplete="off"
+          ></ion-input>
+        </ion-item>
+
+        <ion-item *ngIf="form.controls['contrasena'].invalid && form.controls['contrasena'].touched">
+          <ion-text color="danger">
+            <small>La contraseña es obligatoria</small>
+          </ion-text>
+        </ion-item>
+
+        <div class="ion-text-center ion-margin-top">
+          <ion-button
+            expand="block"
+            type="submit"
+            [disabled]="form.invalid"
+            color="primary"
+          >
+            Iniciar Sesión
+          </ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </form>
+</ion-content>

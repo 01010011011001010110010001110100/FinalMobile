@@ -46,8 +46,7 @@ export class NoticiasEspecificasPage implements OnInit {
   constructor(private noticiasService: NoticiasEspecificasService) {}
 
   ngOnInit() {
-    const token = '674c5cb181174f8e7d1737bcd0147dfe';
-    this.noticiasService.getNoticias(token).subscribe({
+    this.noticiasService.getNoticias().subscribe({
       next: (res) => {
         if (res.exito) {
           this.noticias = res.datos;

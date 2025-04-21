@@ -20,6 +20,7 @@ import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { Geolocation } from '@capacitor/geolocation';
 import { addIcons } from 'ionicons';
 import { camera, location } from 'ionicons/icons';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'nueva-situacion',
@@ -52,7 +53,8 @@ export class NuevaSituacionPage {
   constructor(
     private situacionSvc: NuevaSituacionService,
     private loadingCtrl: LoadingController,
-    private toastCtrl: ToastController
+    private toastCtrl: ToastController,
+    private auth: AuthService
   ) {
     addIcons({ camera, location });
   }
@@ -121,11 +123,8 @@ export class NuevaSituacionPage {
     const load = await this.loadingCtrl.create({ message: 'Reportando...' });
     await load.present();
 
-    const token = '674c5cb181174f8e7d1737bcd0147dfe';
-
     this.situacionSvc
       .reportarSituacion(
-        token,
         this.titulo,
         this.descripcion,
         this.fotoBase64,

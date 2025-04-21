@@ -10,9 +10,11 @@ import { MisSituacionesPage } from './mis-situaciones/mis-situaciones.page';
 import { MapaSituacionesPage } from './mapa-situaciones/mapa-situaciones/mapa-situaciones.page';
 import { AcercaPage } from './acerca/acerca.page';
 import { ServiciosPage } from './servicios/servicios.page';
+import { LoginPage } from './auth/login/login.page';
 import { NoticiasPage } from './noticias/noticias.page';
 import { MedidasPage } from './medidas/medidas.page';
 import { MiembrosPage } from './miembros/miembros.page';
+import { MedidaDetallePage } from './medida-detalle/medida-detalle.page';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },
@@ -27,11 +29,10 @@ export const routes: Routes = [
   { path: 'mapa-situaciones', component: MapaSituacionesPage },
   { path: 'acerca', component: AcercaPage },
   { path: 'servicios', component: ServiciosPage },
+  { path: 'login', component: LoginPage },
   { path: 'noticias', component: NoticiasPage },
   { path: 'medidas', component: MedidasPage },
-  {
-    path: 'medidas/:id',
-    loadComponent: () => import('./medida-detalle/medida-detalle.page').then(m => m.MedidaDetallePage)
-  },
+  { path: 'medidas/:id', component: MedidaDetallePage },
   { path: 'miembros', component: MiembrosPage },
+
 ];
